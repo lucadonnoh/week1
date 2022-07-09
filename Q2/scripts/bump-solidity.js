@@ -10,3 +10,10 @@ bumped = bumped.replace(verifierRegex, 'contract HelloWorldVerifier');
 fs.writeFileSync("./contracts/HelloWorldVerifier.sol", bumped);
 
 // [assignment] add your own scripts below to modify the other verifier contracts you will build during the assignment
+
+let Multiplier3Verifier = fs.readFileSync("./contracts/Multiplier3Verifier.sol", { encoding: 'utf-8' });
+let Multiplier3Bumped = Multiplier3Verifier.replace(solidityRegex, 'pragma solidity ^0.8.0');
+Multiplier3Bumped = Multiplier3Bumped.replace(verifierRegex, 'contract Multiplier3Verifier');
+
+fs.writeFileSync("./contracts/Multiplier3Verifier.sol", Multiplier3Bumped);
+
